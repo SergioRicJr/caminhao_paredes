@@ -24,7 +24,7 @@ for y in lp:
     indice2 = []
     combinacoes = []  
     for i in range(len(lp)):
-        if i==y:
+        if i==lp.index(y):
             continue
         elif y['nome'] not in paredes_carregadas and lp[i]['nome'] not in paredes_carregadas:
             c2 = lp[x]['largura'] + lp[i]['largura']
@@ -33,9 +33,10 @@ for y in lp:
                 indice1.append(lp.index(y))
                 indice2.append(i)
 
-    print(combinacoes, indice1, indice2, sep='\n')
-    print(max(combinacoes))
-    print(lp[indice1[combinacoes.index(max(combinacoes))]]['nome'])
+    
+        print(combinacoes, indice1, indice2, sep='\n')
+        #print(max(combinacoes))
+    #print(lp[indice1[combinacoes.index(max(combinacoes))]]['nome'])
 #print(lp[indice2[combinacoes.index(max(combinacoes))]]['nome'])
     # combinacoes_finais.append(
     #     {
