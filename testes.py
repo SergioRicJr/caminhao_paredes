@@ -1,8 +1,8 @@
 lp =[{'nome': 'pt1', 'largura': 3},{'nome': 'pt2', 'largura': 2},{'nome': 'pt3', 'largura': 2},{'nome': 'pt4', 'largura': 2.5},{'nome': 'pt5', 'largura': 3.5},{'nome': 'pt6', 'largura': 3.2}]
 
 
-combinacoes_finais = []
-paredes_combinadas = []
+
+
 
 
 
@@ -35,24 +35,31 @@ paredes_combinadas = []
 nome1 = []
 nome2 = []
 combinacoes = []
-paredes_combinadas1 = []
-paredes_combinadas2 = []
+combinacoes_finais = []
+paredes_combinadas = []
+# paredes_combinadas1 = []
+# paredes_combinadas2 = []
 for x in lp:   # ERRO AO PULAR PAREDES NA LISTA DE PAREDES COMBINADAS, TENTER FAZER POR ITERACAO DE LISTA
-    # nome1 = []
-    # nome2 = []
-    # combinacoes = []
-    print(combinacoes)
+    nome1 = []
+    nome2 = []
+    combinacoes = []
     for i in lp:
         if x==i:
             continue
-        # if i['nome'] in paredes_combinadas1 or i['nome'] in paredes_combinadas2 or x['nome'] in paredes_combinadas1 or x['nome'] in paredes_combinadas2:
-        #     continue
+        if i['nome'] in paredes_combinadas or x['nome'] in paredes_combinadas:
+            continue
         else:
             c2 = x['largura'] + i['largura']
             if c2 <= 6:
                 combinacoes.append(c2)
                 nome1.append(x['nome'])
                 nome2.append(i['nome'])
+    try:
+        indice = combinacoes.index(max(combinacoes))
+        paredes_combinadas.append(nome1[indice])
+        paredes_combinadas.append(nome2[indice])
+    except:
+        continue
     # print(nome1)
     # print(nome2)
     # try:
@@ -68,3 +75,6 @@ for x in lp:   # ERRO AO PULAR PAREDES NA LISTA DE PAREDES COMBINADAS, TENTER FA
 
 #print(nome1, nome2, sep='\n')
 print(combinacoes, nome1, nome2, sep='\n')
+for i in combinacoes:  #tentar fazer as combinacoes de vdd fora do primeiro loop
+    pass
+print(paredes_combinadas)
