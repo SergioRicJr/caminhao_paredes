@@ -53,7 +53,7 @@ for x in lp:   # melhorar forma d fazer para escolher as melhores combinacoes
             if c2 <= 6:
                 combinacoes.append(c2)
                 nome1.append(x['nome'])
-                nome2.append(i['nome'])
+                nome2.append(i['nome'])               
 for i in range(len(combinacoes)): #jeito certo de achar as melhores combinacoes
     indice = combinacoes.index(max(combinacoes))
     noome1 = nome1[indice]
